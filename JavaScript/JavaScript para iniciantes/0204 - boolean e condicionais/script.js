@@ -40,7 +40,7 @@ var corFavorita = 'Azul';
 
 switch (corFavorita) {
   case 'Azul':
-    console.log('Olhe para o céu.');
+    console.log('Olhe para o céu, ta tão lindo hoje.');
     break;
   case 'Vermelho':
     console.log('Olhe para rosas.');
@@ -138,29 +138,37 @@ false || true; // true
 let eu = 27
 let filha = 7
 if ( eu > filha) console.log("Você é mais velho")
+else if(eu == filha) console.log("É igual")
+else console.log("É menor")
 // Dependendo do resultado coloque no console 'É maior', 'É igual' ou 'É menor'
 let amor = 27
 if(eu > amor) {
     console.log('Falso')
-} else if (filha > eu){
-    console.log('Verdadeiro')
-} else if (eu === amor) console.log("Verdadeiro amô")
+} else if (filha > eu || eu === amor){
+    console.log('Verdadeiro amô!')
+}
     
 // Qual valor é retornado na seguinte expressão?
-var expressao = (5 - 2) && (5 - ' ') && (5 - 2);
+var expressao = (5 - 2) && (5 - ' ') && (5 - 2); // resposta 3
 console.log(expressao)
 
 // Verifique se as seguintes variáveis são Truthy ou Falsy
 var nome = 'Andre';
+console.log(nome, !!nome)
 var idade = 28;
+console.log(idade, !!idade)
 var possuiDoutorado = false;
+console.log(possuiDoutorado, !!possuiDoutorado)
 var empregoFuturo;
+console.log(possuiDoutorado, !!possuiDoutorado)
 var dinheiroNaConta = 0;
+console.log(dinheiroNaConta, !!dinheiroNaConta)
 
 // Compare o total de habitantes do Brasil com China (valor em milhões)
 var brasil = 207;
 var china = 1340;
-
+if(brasil > china ) console.log("Brasil tem mais habitantes por area")
+else if (china > brasil) console.log(`A China tem ${china} milhões de pessoas por area e o Brasil tem ${brasil} por area, sendo uma diferença de ${china - brasil} milhões por area`)
 // O que irá aparecer no console?
 if(('Gato' === 'gato') && (5 > 2)) {
   console.log('Verdadeiro');
