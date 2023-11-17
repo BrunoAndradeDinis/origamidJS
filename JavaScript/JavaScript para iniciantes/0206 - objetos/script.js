@@ -133,7 +133,7 @@ let bruno = {
     'idade': 27,
     'cidade': "Franca",
     'profissao': "Frontend DEV",
-    'possuiGraduacao': false
+    possuiGraduacao: false
 }
 // Crie um método no objeto anterior, que mostre o seu nome completo
 bruno.nomeCompleto = function() {
@@ -155,6 +155,11 @@ carro.preco = 3000;
 var labrador = {
   cor: "Preto",
   idade: 10,
-  late: "Sempre que ver um homem",
-  'raça': "Labrador"
+  latir(pessoa){
+    if(pessoa == 'homem') {
+      return "Latir"
+    } else {
+      return "Nada"
+    }
+  }
 }
