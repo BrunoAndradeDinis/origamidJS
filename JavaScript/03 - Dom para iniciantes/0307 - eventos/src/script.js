@@ -123,14 +123,46 @@ imgs.forEach((img) => {
 // adicione a classe ativo ao item clicado e remova dos
 // demais itens caso eles possuam a mesma. Previna
 // o comportamento padrão desses links
+let linkes = document.querySelectorAll('a[href^="#"]')
+console.log(linkes)
 
-
+linkes.forEach((link) => {
+  link.addEventListener('click', (evento) => {
+    evento.preventDefault()
+    console.log(evento.target)
+    linkes.forEach(link => {
+      if(link.href === evento.target.href){
+        link.classList.add('ativo')
+      } else {
+        link.classList.remove('ativo')
+      }
+    })
+  })
+})
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-
-
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
+let tudotudotudo = document.querySelectorAll('body *')
+console.log(tudotudotudo)
+
+tudotudotudo.forEach(elemento => {
+  elemento.addEventListener('click', oraora)
+})
+
+function oraora(evento) {
+  console.log(evento.currentTarget) // .remove() para remover
+}
+
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+window.addEventListener('keydown', clicou)
+function clicou (event) {
+  if(event.key === 't'){
+      console.log("DALEEEEEEEEEEEEEEEEEEEEE!! AGORA FOI")
+      document.documentElement.classList.toggle('textomaior')
+    }
+    else console.log(event.key)
+
+}

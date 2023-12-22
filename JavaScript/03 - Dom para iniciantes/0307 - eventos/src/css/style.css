@@ -8,6 +8,10 @@ img {
   max-width: 100%;
 }
 
+html.textomaior{
+  font-size: 120%;
+}
+
 ul {
   list-style: none;
 }
