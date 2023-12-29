@@ -1,5 +1,6 @@
 const activeClassName = 'ativo'
 
+// tabNav, ao clicar na imagem faz aparecer o conteúdo relacionado a ela.
 function initTabNav(){
   const tabMenu = document.querySelectorAll('.js-tabmenu li')
   const tabContent = document.querySelectorAll('.js-tabcontent section')
@@ -22,6 +23,7 @@ function initTabNav(){
   }
 } initTabNav()
 
+// accordion list, ao clicar na legenda aparece a descrição em baixo.
 function initAccord(){
   const accordionList = document.querySelectorAll('.js-accordion dt')
   if(accordionList.length) {
@@ -41,3 +43,37 @@ function initAccord(){
   }
 
 } initAccord()
+
+// Scroll suave nos links internos com js
+function initScrollSuave(){
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
+
+function scrollToSection(evento) {
+  evento.preventDefault()
+
+  // aqui pegamos os dados dos links internos e localizamos/apontamos sua respectiva section.
+  const href = evento.currentTarget.getAttribute('href')
+  const section = document.querySelector(href)
+  const topo = section.offsetTop
+  
+  // aqui levaremos até o local de 3 maneiras
+  // 1º maneira, direto ao ponto
+  // window.scroll(0, topo)
+  
+  // 2º maneira, direto ao ponto de maneira suave.
+  // window.scroll({
+  //   top: topo,
+  //   behavior: 'smooth'
+  // })
+  
+  // 3º maneira, 
+    section.scrollIntoView({
+      behavior: 'smooth', 
+      block: 'start'});
+}
+
+linksInternos.forEach((link) => {
+  link.addEventListener('click', scrollToSection)
+  link
+})
+} initScrollSuave()
